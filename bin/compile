@@ -131,9 +131,8 @@ fi
 
 # compile Typescript sources
 echo "-----> Compiling typescript source"
-ls -la $BUILD_DIR/node_modules
-ls -la $BUILD_DIR/node_modules/typescript
-$BUILD_DIR/node_modules/typescript/bin/tsc `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v "\.d.ts"` --module "commonjs" --sourceMap
+ls -la $build_dir/node_modules
+$build_dir/node_modules/typescript/bin/tsc `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v "\.d.ts"` --module "commonjs" --sourceMap
 
 
 # Update the PATH
