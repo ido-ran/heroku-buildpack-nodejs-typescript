@@ -129,6 +129,11 @@ if [ ! -e $build_dir/Procfile ]; then
   fi
 fi
 
+# compile Typescript sources
+echo "-----> Compiling typescript source"
+$BUILD_DIR/node_modules/typescript/bin/tsc `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v "\.d.ts"` --module "commonjs" --sourceMap
+
+
 # Update the PATH
 status "Building runtime environment"
 mkdir -p $build_dir/.profile.d
